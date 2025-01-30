@@ -12,7 +12,11 @@ class Zoo {
     }
 
     public void displayZoo() {
-        System.out.println("Zoo : " + name + " situe a " + city
-                            + " avec " + nbrCages + " cages.");
+        System.out.println(this);
+    }
+    @Override
+    public String toString() {
+        return "Zoo { Nom: " + name +", Ville: "
+                + city + ", Nombre de cages: " + nbrCages + " }";
     }
 }

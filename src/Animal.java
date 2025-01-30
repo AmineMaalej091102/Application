@@ -12,9 +12,12 @@ class Animal {
     }
 
     public void displayAnimal() {
-        System.out.println("Animal : " + name
-                            + ", Famille : "+ family + ", Age : "
-                            + age + ", Mammifere : "
-                            + (isMammal ? "Oui" : "Non"));
+        System.out.println(this);
+    }
+    @Override
+    public String toString() {
+        return "Animal { Nom: " + name + ", Famille: "
+                + family + ", Age: " + age + ", Mammifere: "
+                + (isMammal ? "Oui" : "Non") + " }";
     }
 }
