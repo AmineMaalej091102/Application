@@ -1,26 +1,28 @@
-class Animal {
-    String family;
-    String name;
-    int age;
-    boolean isMammal;
+package tn.esprit.gestionzoo.entities;
 
-    public Animal(String family, String name, int age, boolean isMammal) {
-        this.family = family;
+public class Animal {
+    private String name;
+    private int age;
+
+    public Animal(String name, int age) {
+        setNom(name);
+        setAge(age);
+    }
+
+    public String getNom() {
+        return name;
+    }
+    public void setNom(String name) {
         this.name = name;
-        this.age = age;
-        this.isMammal = isMammal;
     }
-    @Override
-    public String toString() {
-        return "Animal { Nom: " + name + ", Famille: "
-                + family + ", Age: " + age + ", Mammifere: "
-                + (isMammal ? "Oui" : "Non") + " }";
+    public int getAge() {
+        return age;
     }
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Animal animal = (Animal) obj;
-        return this.name.equalsIgnoreCase(animal.name);
+    public void setAge(int age) {
+        if (age >= 0) {
+            this.age = age;
+        } else {
+            System.out.println("L'age d'un animal ne peut etre negatif ! ");
+        }
     }
 }

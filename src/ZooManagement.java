@@ -1,29 +1,34 @@
+package tn.esprit.gestionzoo.main;
+
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
+
 public class ZooManagement {
     public static void main(String[] args) {
-        Zoo myZoo = new Zoo("My Zoo", "Tunis");
-        Animal lion = new Animal("Felins", "Lion", 5, true);
-        Animal tiger = new Animal("Felins", "Tigre", 4, true);
-        Animal elephant = new Animal("Elephantides", "Elephant", 10, true);
+        Zoo zoo = new Zoo("Esprit Zoo", 5);
+        Animal lion = new Animal("simba", 5);
+        Animal tiger = new Animal("baguira", 4);
+        Animal elephant = new Animal("fifi", 10);
 
-        myZoo.addAnimal(lion);
-        myZoo.addAnimal(tiger);
-        myZoo.addAnimal(elephant);
-        myZoo.addAnimal(elephant);
+        zoo.addAnimal(lion);
+        zoo.addAnimal(tiger);
+        zoo.addAnimal(elephant);
+        zoo.addAnimal(elephant);
 
-        myZoo.displayAnimals();
+        zoo.displayAnimals();
 
-        int index = myZoo.searchAnimal(new Animal("Felins", "Lion", 5, true));
+        int index = zoo.searchAnimal(new Animal("simba", 5));
         System.out.println("Lion trouve a l'indice : " + index);
 
-        boolean removed = myZoo.removeAnimal(tiger);
+        boolean removed = zoo.removeAnimal(tiger);
         System.out.println("Tigre supprime : " + removed);
 
-        System.out.println("Le zoo est plein ? " + myZoo.isZooFull());
+        System.out.println("Le zoo est plein ? " + zoo.isZooFull());
 
-        Zoo secondZoo = new Zoo("Wild Park", "Sousse");
-        secondZoo.addAnimal(new Animal("Oiseaux","Perroquet", 2, false));
+        Zoo secondZoo = new Zoo("Wild Park", 25);
+        secondZoo.addAnimal(new Animal("ziewziew", 2));
 
-        Zoo largerZoo = Zoo.comparerZoo(myZoo, secondZoo);
-        System.out.println("Le zoo avec le plus d'animaux est : " + largerZoo.name);
+        Zoo largerZoo = Zoo.comparerZoo(zoo, secondZoo);
+        System.out.println("Le zoo avec le plus d'animaux est : " + largerZoo.getNom());
     }
 }
