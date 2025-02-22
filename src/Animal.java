@@ -25,4 +25,9 @@ public class Animal {
             System.out.println("L'age d'un animal ne peut etre negatif ! ");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Animal{nom='" + name + "', age=" + age + "}";
+    }
 }

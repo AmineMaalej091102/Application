@@ -1,34 +1,23 @@
 package tn.esprit.gestionzoo.main;
 
-import tn.esprit.gestionzoo.entities.Animal;
 import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Terrestrial;
+import tn.esprit.gestionzoo.entities.Dolphin;
+import tn.esprit.gestionzoo.entities.Penguin;
 
 public class ZooManagement {
     public static void main(String[] args) {
-        Zoo zoo = new Zoo("Esprit Zoo", 5);
-        Animal lion = new Animal("simba", 5);
-        Animal tiger = new Animal("baguira", 4);
-        Animal elephant = new Animal("fifi", 10);
+        Zoo zoo = new tn.esprit.gestionzoo.entities.Zoo("Esprit Zoo", 5);
+
+        Animal lion = new Terrestrial("simba", 5, 4);
+        Animal tiger = new Terrestrial("baguira", 3, 4);
+        Animal dolphin = new Dolphin("fifi", 8, "Ocean", 25.5f);
+        Animal penguin = new Penguin("Penguin", 6, "Antarctica", 15.0f);
 
         zoo.addAnimal(lion);
         zoo.addAnimal(tiger);
-        zoo.addAnimal(elephant);
-        zoo.addAnimal(elephant);
-
-        zoo.displayAnimals();
-
-        int index = zoo.searchAnimal(new Animal("simba", 5));
-        System.out.println("Lion trouve a l'indice : " + index);
-
-        boolean removed = zoo.removeAnimal(tiger);
-        System.out.println("Tigre supprime : " + removed);
-
-        System.out.println("Le zoo est plein ? " + zoo.isZooFull());
-
-        Zoo secondZoo = new Zoo("Wild Park", 25);
-        secondZoo.addAnimal(new Animal("ziewziew", 2));
-
-        Zoo largerZoo = Zoo.comparerZoo(zoo, secondZoo);
-        System.out.println("Le zoo avec le plus d'animaux est : " + largerZoo.getNom());
+        zoo.addAnimal(dolphin);
+        zoo.addAnimal(penguin);
     }
 }
