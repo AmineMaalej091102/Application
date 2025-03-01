@@ -1,19 +1,19 @@
 package tn.esprit.gestionzoo.entities;
 
 public class Animal {
-    private String name;
+    private String nom;
     private int age;
 
-    public Animal(String name, int age) {
-        setNom(name);
+    public Animal(String nom, int age) {
+        setNom(nom);
         setAge(age);
     }
 
     public String getNom() {
-        return name;
+        return nom;
     }
-    public void setNom(String name) {
-        this.name = name;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
     public int getAge() {
         return age;
@@ -28,6 +28,6 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal{nom='" + name + "', age=" + age + "}";
+        return "Animal{nom='" + nom + "', age=" + age + "}";
     }
 }
