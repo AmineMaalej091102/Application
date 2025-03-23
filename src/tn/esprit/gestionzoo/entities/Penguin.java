@@ -1,6 +1,7 @@
 package tn.esprit.gestionzoo.entities;
-import tn.esprit.gestionzoo.entities.Aquatic;
+import tn.esprit.gestionzoo.enums.Food;
 import tn.esprit.gestionzoo.exceptions.InvalidAgeException;
+import tn.esprit.gestionzoo.interfaces.Carnivore;
 
 public class Penguin extends Aquatic {
     private float swimmingDepth;

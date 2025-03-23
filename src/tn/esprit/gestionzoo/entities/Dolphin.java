@@ -1,5 +1,4 @@
 package tn.esprit.gestionzoo.entities;
-import tn.esprit.gestionzoo.entities.Aquatic;
 import tn.esprit.gestionzoo.exceptions.InvalidAgeException;
 
 public class Dolphin extends Aquatic {

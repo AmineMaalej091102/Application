@@ -1,5 +1,4 @@
 package tn.esprit.gestionzoo.entities;
-import tn.esprit.gestionzoo.entities.Animal;
 import java.util.ArrayList;
 import java.util.List;
 

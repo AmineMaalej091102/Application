@@ -1,16 +1,14 @@
 package tn.esprit.gestionzoo.main;
 
-import tn.esprit.gestionzoo.entities.Zoo;
-import tn.esprit.gestionzoo.entities.Animal;
-import tn.esprit.gestionzoo.entities.Terrestrial;
-import tn.esprit.gestionzoo.entities.Aquatic;
-import tn.esprit.gestionzoo.entities.Dolphin;
-import tn.esprit.gestionzoo.entities.Penguin;
+import tn.esprit.gestionzoo.entities.*;
+import tn.esprit.gestionzoo.enums.Food;
 import tn.esprit.gestionzoo.exceptions.InvalidAgeException;
 import tn.esprit.gestionzoo.exceptions.ZooFullException;
 
 public class ZooManagement {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidAgeException {
+        /*
+
         Zoo zoo = new Zoo("Esprit Zoo");
 
         try {
@@ -29,5 +27,18 @@ public class ZooManagement {
         } catch (InvalidAgeException e) {
             System.out.println("Exception capturee : " + e.getMessage());
         }
+
+         */
+        Penguin penguin = new Penguin("Penguin", 5, "Antarctica", 10.2f);
+        Terrestrial terrestrial = new Terrestrial("Terrestrial", 4, 4);
+        Aquatic aquatic = new Aquatic("Aquatic", 3, "Forest") {
+            @Override
+            public void swim() {
+                System.out.println("Swimming!");
+            }
+        };
+        penguin.eatMeat(Food.MEAT);
+        terrestrial.eatPlantAndMeat(Food.BOTH);
+        aquatic.eatMeat(Food.MEAT);
     }
 }
